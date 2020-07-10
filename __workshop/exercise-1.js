@@ -1,14 +1,36 @@
 // Exercise 1
 // ------------
-const arrayOfWords = ['cucumber', 'tomatos', 'avocado'];
-const complicatedArray = ['cucumber', 44, true];
+const arrayOfWords = ["cucumber", "tomato", "avocado"];
+const complicatedArray = ["cucumber", 44, true];
 
 const makeAllCaps = (array) => {
-  // write some code
+  return new Promise((resolve, reject) => {
+    const isEveryString = array.every((element) => {
+      return typeof element === "string";
+    });
+    // console.log(isEveryString);
+    if (isEveryString) {
+      const capsArray = array.map((element) => {
+        return element.toUpperCase();
+      });
+      resolve(capsArray);
+    } else {
+      reject("this array contains non-string elements");
+    }
+  });
 };
 
 const sortWords = (array) => {
-  // write some code
+  return new Promise((resolve, reject) => {
+    const isEveryString = array.every((element) => {
+      return typeof element === "string";
+    });
+    if (isEveryString) {
+      resolve(array.sort());
+    } else {
+      reject("error");
+    }
+  });
 };
 
 // Calling (testing)
@@ -21,3 +43,5 @@ makeAllCaps(complicatedArray)
   .then(sortWords)
   .then((result) => console.log(result))
   .catch((error) => console.log(error));
+
+console.log("is this the end?");
