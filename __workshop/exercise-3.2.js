@@ -2,12 +2,13 @@
 // ---------------------------------
 
 const opencage = require("opencage-api-client");
-const request = require("request");
 require("dotenv").config();
+
+const myKey = process.env.OPENCAGE_API_KEY;
 
 const getPositionFromAddress = (address) => {
   const requestObj = {
-    key: "f73a9022bacd492cb4a8633fcb6f4c69",
+    key: myKey,
     q: address,
   };
   return opencage
