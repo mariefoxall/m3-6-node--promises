@@ -22,14 +22,16 @@ const getPositionFromAddress = (address) => {
     });
 };
 
-getPositionFromAddress(
-  "1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8"
-).then((response) => console.log(response));
+// getPositionFromAddress(
+//   "1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8"
+// ).then((response) => console.log(response));
 
-getPositionFromAddress("London, England").then((response) =>
-  console.log(response)
-);
+// getPositionFromAddress("London, England").then((response) =>
+//   console.log(response)
+// );
 
-getPositionFromAddress(
-  "435 Mclean Drive, Vancouver, BC, Canada"
-).then((response) => console.log(response));
+// getPositionFromAddress(
+//   "435 Mclean Drive, Vancouver, BC, Canada"
+// ).then((response) => console.log(response));
+
+module.exports = { getPositionFromAddress };
